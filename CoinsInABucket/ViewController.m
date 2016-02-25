@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "Bucket.h"
+#import "Coin.h"
+
+#define DEFAULT_COIN_VALUE 1
 
 @interface ViewController ()
+
+@property (nonatomic, strong) Bucket *bucket;
+@property (weak, nonatomic) IBOutlet UILabel *bucketLabel;
 
 @end
 
@@ -16,12 +23,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    _bucket = [[Bucket alloc] init];
+    
+    _bucketLabel.text = [NSString stringWithFormat:@"%d", [_bucket totalValue]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)coinTapped:(UITapGestureRecognizer *)sender {
+    Coin *coin = [[Coin alloc] initWithValue:DEFAULT_COIN_VALUE];
+    
+    [_bucket addCoin:coin];
 }
 
 @end

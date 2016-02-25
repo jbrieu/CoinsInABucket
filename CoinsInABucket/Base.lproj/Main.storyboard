@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,11 +17,58 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bucket" translatesAutoresizingMaskIntoConstraints="NO" id="ujB-8S-zc9">
+                                <rect key="frame" x="194" y="394" width="213" height="198"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="198" id="GlR-4u-kEd"/>
+                                    <constraint firstAttribute="width" secondItem="ujB-8S-zc9" secondAttribute="height" multiplier="263:244" id="meP-rH-ENa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-Nl-8Kr">
+                                <rect key="frame" x="282.5" y="501" width="36.5" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.19956642670157065" green="0.19956642670157065" blue="0.19956642670157065" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coin" translatesAutoresizingMaskIntoConstraints="NO" id="HTi-rC-bNd">
+                                <rect key="frame" x="235" y="20" width="130" height="113"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HTi-rC-bNd" secondAttribute="height" multiplier="130:113" id="2rj-Rr-vgT"/>
+                                    <constraint firstAttribute="width" constant="130" id="9FI-KC-vSg"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="N2Y-PZ-t4q" appends="YES" id="FAb-vy-qwd"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ujB-8S-zc9" secondAttribute="bottom" constant="8" id="IAU-qs-xyJ"/>
+                            <constraint firstItem="HTi-rC-bNd" firstAttribute="centerX" secondItem="ujB-8S-zc9" secondAttribute="centerX" id="XjT-Ez-MEP"/>
+                            <constraint firstItem="FoE-Nl-8Kr" firstAttribute="centerX" secondItem="ujB-8S-zc9" secondAttribute="centerX" id="Y2t-3A-SfC"/>
+                            <constraint firstItem="ujB-8S-zc9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YzY-IT-Moa"/>
+                            <constraint firstItem="HTi-rC-bNd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eEV-Xx-FJ2"/>
+                            <constraint firstItem="FoE-Nl-8Kr" firstAttribute="top" secondItem="ujB-8S-zc9" secondAttribute="bottom" constant="-91" id="kqR-JP-Sr5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bucketLabel" destination="FoE-Nl-8Kr" id="y5v-j5-KFU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="N2Y-PZ-t4q">
+                    <connections>
+                        <action selector="coinTapped:" destination="BYZ-38-t0r" id="HvG-O3-rpW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="309" y="366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Coin" width="735" height="716"/>
+        <image name="bucket" width="616" height="555"/>
+    </resources>
 </document>
