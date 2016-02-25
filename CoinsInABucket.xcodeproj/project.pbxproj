@@ -16,6 +16,7 @@
 		8F0EA13F1C7ED2DC008D624A /* CoinsInABucketUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0EA13E1C7ED2DC008D624A /* CoinsInABucketUITests.m */; };
 		8F0EA14F1C7EE0D8008D624A /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0EA14E1C7EE0D8008D624A /* Coin.m */; };
 		8F0EA1521C7EE0E9008D624A /* Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0EA1511C7EE0E9008D624A /* Bucket.m */; };
+		8F0EA1561C7F475C008D624A /* CoinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0EA1551C7F475C008D624A /* CoinTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		8F0EA14E1C7EE0D8008D624A /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
 		8F0EA1501C7EE0E9008D624A /* Bucket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket.h; sourceTree = "<group>"; };
 		8F0EA1511C7EE0E9008D624A /* Bucket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket.m; sourceTree = "<group>"; };
+		8F0EA1551C7F475C008D624A /* CoinTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		8F0EA1321C7ED2DC008D624A /* CoinsInABucketTests */ = {
 			isa = PBXGroup;
 			children = (
+				8F0EA1541C7F4730008D624A /* Model */,
 				8F0EA1351C7ED2DC008D624A /* Info.plist */,
 			);
 			path = CoinsInABucketTests;
@@ -151,6 +154,14 @@
 				8F0EA14E1C7EE0D8008D624A /* Coin.m */,
 				8F0EA1501C7EE0E9008D624A /* Bucket.h */,
 				8F0EA1511C7EE0E9008D624A /* Bucket.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F0EA1541C7F4730008D624A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F0EA1551C7F475C008D624A /* CoinTests.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0EA1561C7F475C008D624A /* CoinTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +526,7 @@
 				8F0EA1451C7ED2DC008D624A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F0EA1461C7ED2DC008D624A /* Build configuration list for PBXNativeTarget "CoinsInABucketTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +535,7 @@
 				8F0EA1481C7ED2DC008D624A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F0EA1491C7ED2DC008D624A /* Build configuration list for PBXNativeTarget "CoinsInABucketUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +544,7 @@
 				8F0EA14B1C7ED2DC008D624A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
