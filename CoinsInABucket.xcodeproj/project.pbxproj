@@ -13,8 +13,9 @@
 		8F0EA1241C7ED2DC008D624A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0EA1221C7ED2DC008D624A /* Main.storyboard */; };
 		8F0EA1261C7ED2DC008D624A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F0EA1251C7ED2DC008D624A /* Assets.xcassets */; };
 		8F0EA1291C7ED2DC008D624A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0EA1271C7ED2DC008D624A /* LaunchScreen.storyboard */; };
-		8F0EA1341C7ED2DC008D624A /* CoinsInABucketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0EA1331C7ED2DC008D624A /* CoinsInABucketTests.m */; };
 		8F0EA13F1C7ED2DC008D624A /* CoinsInABucketUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0EA13E1C7ED2DC008D624A /* CoinsInABucketUITests.m */; };
+		8F0EA14F1C7EE0D8008D624A /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0EA14E1C7EE0D8008D624A /* Coin.m */; };
+		8F0EA1521C7EE0E9008D624A /* Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0EA1511C7EE0E9008D624A /* Bucket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +47,14 @@
 		8F0EA1281C7ED2DC008D624A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F0EA12A1C7ED2DC008D624A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F0EA12F1C7ED2DC008D624A /* CoinsInABucketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinsInABucketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F0EA1331C7ED2DC008D624A /* CoinsInABucketTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinsInABucketTests.m; sourceTree = "<group>"; };
 		8F0EA1351C7ED2DC008D624A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F0EA13A1C7ED2DC008D624A /* CoinsInABucketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinsInABucketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0EA13E1C7ED2DC008D624A /* CoinsInABucketUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinsInABucketUITests.m; sourceTree = "<group>"; };
 		8F0EA1401C7ED2DC008D624A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F0EA14D1C7EE0D8008D624A /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
+		8F0EA14E1C7EE0D8008D624A /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
+		8F0EA1501C7EE0E9008D624A /* Bucket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket.h; sourceTree = "<group>"; };
+		8F0EA1511C7EE0E9008D624A /* Bucket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		8F0EA1181C7ED2DC008D624A /* CoinsInABucket */ = {
 			isa = PBXGroup;
 			children = (
+				8F0EA14C1C7ED3F7008D624A /* Model */,
 				8F0EA11C1C7ED2DC008D624A /* AppDelegate.h */,
 				8F0EA11D1C7ED2DC008D624A /* AppDelegate.m */,
 				8F0EA11F1C7ED2DC008D624A /* ViewController.h */,
@@ -125,7 +130,6 @@
 		8F0EA1321C7ED2DC008D624A /* CoinsInABucketTests */ = {
 			isa = PBXGroup;
 			children = (
-				8F0EA1331C7ED2DC008D624A /* CoinsInABucketTests.m */,
 				8F0EA1351C7ED2DC008D624A /* Info.plist */,
 			);
 			path = CoinsInABucketTests;
@@ -138,6 +142,17 @@
 				8F0EA1401C7ED2DC008D624A /* Info.plist */,
 			);
 			path = CoinsInABucketUITests;
+			sourceTree = "<group>";
+		};
+		8F0EA14C1C7ED3F7008D624A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F0EA14D1C7EE0D8008D624A /* Coin.h */,
+				8F0EA14E1C7EE0D8008D624A /* Coin.m */,
+				8F0EA1501C7EE0E9008D624A /* Bucket.h */,
+				8F0EA1511C7EE0E9008D624A /* Bucket.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0EA1521C7EE0E9008D624A /* Bucket.m in Sources */,
 				8F0EA1211C7ED2DC008D624A /* ViewController.m in Sources */,
 				8F0EA11E1C7ED2DC008D624A /* AppDelegate.m in Sources */,
 				8F0EA11B1C7ED2DC008D624A /* main.m in Sources */,
+				8F0EA14F1C7EE0D8008D624A /* Coin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +297,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F0EA1341C7ED2DC008D624A /* CoinsInABucketTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
