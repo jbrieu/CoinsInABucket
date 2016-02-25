@@ -46,6 +46,10 @@
     [bucket addCoin:coin3];
     
     XCTAssertEqual([bucket totalValue], (NSUInteger)1004);
+    
+    [bucket addCoin:nil];
+    
+    XCTAssertEqual([bucket totalValue], (NSUInteger)1004);
 }
 
 - (void)testAddCoin {
@@ -69,6 +73,10 @@
     
     Coin *coin3 = [[Coin alloc] initWithValue:1000];
     [bucket addCoin:coin3];
+    
+    XCTAssertEqual([bucket totalValue], (NSUInteger)1004);
+    
+    [bucket addCoin:nil];
     
     XCTAssertEqual([bucket totalValue], (NSUInteger)1004);
 }
