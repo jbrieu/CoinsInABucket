@@ -29,6 +29,7 @@
 - (void)addCoin:(Coin *)coin {
     if(coin) {
         _totalValue += coin.value;
+        [_delegate bucketDidReceiveCoin:self];
     }
 }
 

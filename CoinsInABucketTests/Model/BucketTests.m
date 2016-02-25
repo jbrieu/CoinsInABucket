@@ -10,11 +10,23 @@
 #import "Bucket.h"
 #import "Coin.h"
 
-@interface BucketTests : XCTestCase
+@interface BucketTests : XCTestCase <BucketDelegate>
+
+@property (nonatomic, strong) NSMutableString *logString;
 
 @end
 
 @implementation BucketTests
+
+- (void)setUp {
+    [super setUp];
+    self.logString = [NSMutableString string];
+}
+
+- (void)tearDown {
+    self.logString = nil;
+    [super tearDown];
+}
 
 - (void)testInit {
     Bucket *bucket = [[Bucket alloc] init];
@@ -71,6 +83,31 @@
     [bucket addCoin:coin3];
     
     XCTAssertEqual([bucket totalValue], (NSUInteger)1004);
+}
+
+- (void)testDelegate {
+    Bucket *bucket = [[Bucket alloc] init];
+    bucket.delegate = self;
+    
+    XCTAssertEqualObjects(bucket.delegate, self, @"Should have the same delegate we gave it");
+    XCTAssertEqualObjects(self.logString, @"", @"Should not call delegate when setting it");
+    
+    Coin *coin = [[Coin alloc] initWithValue:2];
+    [bucket addCoin:coin];
+    
+    NSString *expectedLog = [NSString stringWithFormat:@"bucketDidReceiveCoin(%p)/", bucket];
+    XCTAssertEqualObjects(self.logString, expectedLog, @"Should call with reference to itself");
+    
+    bucket.delegate = nil;
+    [bucket addCoin:coin];
+    XCTAssertEqualObjects(self.logString, expectedLog, @"Should not add anynore calls because delegate is not listening anymore");
+    
+}
+
+#pragma mark - BucketDelegate
+
+- (void)bucketDidReceiveCoin:(Bucket *)bucket {
+    [_logString appendFormat:@"bucketDidReceiveCoin(%p)/", bucket];
 }
 
 

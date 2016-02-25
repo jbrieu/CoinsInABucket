@@ -12,7 +12,7 @@
 
 #define DEFAULT_COIN_VALUE 1
 
-@interface ViewController ()
+@interface ViewController () <BucketDelegate>
 
 @property (nonatomic, strong) Bucket *bucket;
 @property (weak, nonatomic) IBOutlet UILabel *bucketLabel;
@@ -25,14 +25,29 @@
     [super viewDidLoad];
     
     _bucket = [[Bucket alloc] init];
+    _bucket.delegate = self;
     
-    _bucketLabel.text = [NSString stringWithFormat:@"%d", [_bucket totalValue]];
+    [self updateBucketLabel];
 }
+
+#pragma mark - UI Actions
 
 - (IBAction)coinTapped:(UITapGestureRecognizer *)sender {
     Coin *coin = [[Coin alloc] initWithValue:DEFAULT_COIN_VALUE];
     
     [_bucket addCoin:coin];
+}
+
+#pragma mark - BucketDelegate
+
+- (void)bucketDidReceiveCoin:(Bucket *)bucket {
+    [self updateBucketLabel];
+}
+
+#pragma mark - Private
+
+- (void)updateBucketLabel {
+    _bucketLabel.text = [NSString stringWithFormat:@"%d", [_bucket totalValue]];
 }
 
 @end

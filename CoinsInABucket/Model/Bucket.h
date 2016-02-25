@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class Coin;
+@class Coin, Bucket;
+
+@protocol BucketDelegate <NSObject>
+
+- (void)bucketDidReceiveCoin:(Bucket *)bucket;
+
+@end
 
 @interface Bucket : NSObject
+
+@property (nonatomic, assign, readwrite) id<BucketDelegate> delegate;
 
 - (void)addCoin:(Coin *)coin;
 - (NSUInteger)totalValue;
