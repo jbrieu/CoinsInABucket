@@ -7,6 +7,13 @@
 //
 
 #import "Bucket.h"
+#import "Coin.h"
+
+@interface Bucket()
+
+@property (nonatomic)  NSUInteger totalValue;
+
+@end
 
 @implementation Bucket
 
@@ -14,18 +21,19 @@
 {
     self = [super init];
     if (self) {
-#warning Not Implemented Yet
+        _totalValue = 0;
     }
     return self;
 }
 
 - (void)addCoin:(Coin *)coin {
-#warning Not Implemented Yet
+    if(coin) {
+        _totalValue += coin.value;
+    }
 }
 
 - (NSUInteger)totalValue {
-#warning Not Implemented Yet
-    return 999999;
+    return _totalValue;
 }
 
 @end
