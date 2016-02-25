@@ -32,9 +32,37 @@
     [super tearDown];
 }
 
-- (void)testExample {
+- (void)testTapTheCoin {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *bucketLabel = app.staticTexts[@"BucketLabel"];
+    XCTAssertEqualObjects(bucketLabel.label, @"0");
+    
+    XCUIElement *coinImage = app.images[@"Coin"];
+    [coinImage tap];
+    
+    XCTAssertEqualObjects(app.staticTexts[@"BucketLabel"].label, @"1");
+    
+    [coinImage tap];
+    
+    XCTAssertEqualObjects(app.staticTexts[@"BucketLabel"].label, @"2");
+    
+    [app rotate:3.14 withVelocity:1.0]; // Rotate PI
+    
+    XCTAssertEqualObjects(app.staticTexts[@"BucketLabel"].label, @"2", @"value should stay the same if rotating the screen");
+    [coinImage tap];
+    XCTAssertEqualObjects(app.staticTexts[@"BucketLabel"].label, @"3", @"Tap should work after rotation");
+    
+    [app.staticTexts[@"BucketLabel"] tap];
+    [app.images[@"bucket"] tap];
+    
+    XCTAssertEqualObjects(app.staticTexts[@"BucketLabel"].label, @"3", @"value should stay the same if tapping it or the bucket");
+    
+    
+    
 }
 
 @end

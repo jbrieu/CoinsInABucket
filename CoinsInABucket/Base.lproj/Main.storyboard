@@ -27,12 +27,16 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-Nl-8Kr">
                                 <rect key="frame" x="282.5" y="501" width="36.5" height="41"/>
+                                <accessibility key="accessibilityConfiguration" identifier="BucketLabel"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" red="0.19956642670157065" green="0.19956642670157065" blue="0.19956642670157065" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coin" translatesAutoresizingMaskIntoConstraints="NO" id="HTi-rC-bNd">
                                 <rect key="frame" x="235" y="20" width="130" height="113"/>
+                                <accessibility key="accessibilityConfiguration" label="Coin">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HTi-rC-bNd" secondAttribute="height" multiplier="130:113" id="2rj-Rr-vgT"/>
