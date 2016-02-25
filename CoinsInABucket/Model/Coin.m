@@ -19,7 +19,7 @@
 - (instancetype)initWithValue:(NSUInteger)value {
     self = [super init];
     if (self) {
-    #warning Not Implemented Yet
+        _value = value;
     }
     return self;
     

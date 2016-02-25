@@ -16,8 +16,13 @@
 @implementation CoinTests
 
 
-- (void)testInitWithValue {
-    Coin *coin = [[Coin alloc] initWithValue:0];
+- (void)testInit {
+    Coin *coin = [[Coin alloc] init];
+    
+    XCTAssertNotNil(coin);
+    XCTAssertEqual([coin value], (NSUInteger)0);
+    
+    coin = [[Coin alloc] initWithValue:0];
     
     XCTAssertNotNil(coin);
     XCTAssertEqual([coin value], (NSUInteger)0);
