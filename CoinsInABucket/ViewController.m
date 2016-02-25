@@ -47,7 +47,7 @@
 #pragma mark - Private
 
 - (void)updateBucketLabel {
-    _bucketLabel.text = [NSString stringWithFormat:@"%d", [_bucket totalValue]];
+    _bucketLabel.text = [NSString stringWithFormat:@"%lu", [_bucket totalValue]];
 }
 
 @end
